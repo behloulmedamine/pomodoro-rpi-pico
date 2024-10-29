@@ -15,7 +15,7 @@ void core1_entry()
 {
     while (true)
     {
-        if (interrupt_flag)
+        if (interrupt_flag & !mute)
         {
             tone();
         }

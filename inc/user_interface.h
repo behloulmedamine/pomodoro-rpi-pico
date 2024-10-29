@@ -54,6 +54,8 @@ void home_view(time_s *time);
  */
 void update_pause_resume_display(bool *startWork);
 
+void update_mute(bool mute);
+
 /**
  * @brief Update the time display on the screen.
  *

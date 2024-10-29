@@ -63,6 +63,14 @@ void update_pause_resume_display(bool *startWork)
     ST7735_DrawString(8, 110, button_text, Font_7x10, ST7735_CYAN, ST7735_BLACK);
 }
 
+void update_mute(bool mute)
+{
+    // Clear the previous text by overwriting it with the background color (black)
+    ST7735_FillRectangle(8, 8, 20, 10, ST7735_BLACK);
+    if (mute)
+        ST7735_DrawString(8, 8, "M", Font_7x10, ST7735_CYAN, ST7735_BLACK);
+}
+
 bool update_time(time_s *time, uint32_t *percentage, bool *work_ptr)
 {
     if ((time->currentSecond == 0) && (time->currentMinute != 0))

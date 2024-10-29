@@ -19,6 +19,8 @@ uint8_t idx = 0;
 uint32_t percentage = 0;
 bool work = true;
 bool firstPowerOn = true;
+bool mute = false;
+
 void home_state()
 {
     if (firstPowerOn)
@@ -34,6 +36,7 @@ void home_state()
         home_view(&time);
         intializeView = false;
         startWork = false;
+        update_mute(mute);
     }
     if (is_start_pause_pressed)
     {
@@ -85,7 +88,8 @@ void home_state()
     if (is_decrease_pressed)
     {
         is_decrease_pressed = false;
-        face = STARS;
+        mute = !mute;
+        update_mute(mute);
     }
 }
 

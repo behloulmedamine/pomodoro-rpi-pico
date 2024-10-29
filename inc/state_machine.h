@@ -34,6 +34,8 @@ extern pomodoro_e state;
 
 extern volatile uint8_t interrupt_flag;
 
+extern bool mute;
+
 void __init();
 
 void home_state();
